@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+    function printOutput(message) {
+    document.write("<strong>Result:</strong> " + message + "<br><br>");
+}
+    function findGCD() {
+    let a = parseInt(prompt("Enter first number:"));
+    let b = parseInt(prompt("Enter second number:"));
+    while (b !== 0) {
+        [a, b] = [b, a % b];
+    }
+    printOutput(`GCD: ${a}`);
+}
+findGCD();
+</script>
+
+</body>
+</html>

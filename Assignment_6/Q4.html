@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+    function reverseNumber() {
+    let num = parseInt(prompt("Enter a number:"));
+    let reversed = parseInt(num.toString().split('').reverse().join(''));
+    document.write("<p>Reversed Number: "+reversed+"</p>");
+    if(num==reversed){
+        document.write("<p>Palindrome</p")
+    }
+    else{
+        document.write("<p>Not a Palindrome</p")
+    }
+}
+reverseNumber();
+</script>
+
+</body>
+</html>

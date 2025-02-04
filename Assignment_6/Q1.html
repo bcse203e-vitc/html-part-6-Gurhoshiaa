@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
 
+<script>
+
+let a = parseInt(prompt('Enter the first variable: '));
+let b = parseInt(prompt('Enter the second variable: '));
+
+document.write(`The value of a before swapping: ${a}`);
+document.write("<br>")
+document.write(`The value of b before swapping: ${b}`);
+document.write("<br>")
+
+a = a + b;
+b = a - b;
+a = a - b;
+
+document.write(`The value of a after swapping: ${a}`);
+document.write("<br>")
+document.write(`The value of b after swapping: ${b}`);
+document.write("<br>")
+
+</script>
+
+</body>
+</html>
