@@ -1,65 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Layout</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        header,
-        footer {
-            background-color: #d3fffbda;
-            color: black;
-            text-align: center;
-            padding: 10px 0;
-        }
-
-        .main-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 10px;
-        }
-
-        .column {
-            flex: 1;
-            padding: 15px;
-            background-color: #f2f2f2;
-            border: 1px solid #ccc;
-        }
-
-        @media (max-width: 768px) {
-            .main-content {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <title>Swap Two Variables</title>
 </head>
-
 <body>
-    <header>
-        <h1>My Responsive Webpage</h1>
-    </header>
-    <main class="main-content">
-        <section class="column">
-            <h2>Left Column</h2>
-            <p>This is the content of the left column.</p>
-        </section>
-        <section class="column">
-            <h2>Right Column</h2>
-            <p>This is the content of the right column.</p>
-        </section>
-    </main>
-    <footer>
-        <p>Thank You</p>
-    </footer>
-</body>
+    <h1>Swap Two Variables Without Using a Third Variable</h1>
 
+    <script>
+        var a = parseInt(prompt("Enter the first number (a): "));
+        var b = parseInt(prompt("Enter the second number (b): "));
+
+        document.write("Before swapping: a = " + a + ", b = " + b + "<br>");
+
+        a = a + b;
+        b = a - b;
+        a = a - b;
+
+        document.write("After swapping: a = " + a + ", b = " + b);
+    </script>
+</body>
 </html>
