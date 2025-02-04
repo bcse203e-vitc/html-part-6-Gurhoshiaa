@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Count Digits in a Number</title>
+</head>
 <body>
+    <h1>Count Digits in a Number</h1>
+    
+    <script>
+        function countDigits(number) {
+            return number.toString().length;
+        }
 
-<script>
-    function countDigits() {
-    let num = prompt("Enter a number:");
-    document.write("<p>Number of digits in "+num+": "+num.length+"</p>");
-    }
-    countDigits();
-</script>
-
+        var number = parseInt(prompt("Enter a number:"));
+        var digitsCount = countDigits(number);
+        
+        document.write("The number " + number + " has " + digitsCount + " digits.");
+    </script>
 </body>
 </html>

@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Find LCM (Least Common Multiple)</title>
+</head>
 <body>
+    <h1>Find LCM (Least Common Multiple)</h1>
+    
+    <script>
+        function findGCD(a, b) {
+            if (b === 0) {
+                return a;
+            } else {
+                return findGCD(b, a % b);
+            }
+        }
 
-<script>
-    function printOutput(message) {
-    document.write("<strong>Result:</strong> " + message + "<br><br>");
-}
-function findLCM() {
-    let a = parseInt(prompt("Enter first number:"));
-    let b = parseInt(prompt("Enter second number:"));
-    let gcd = (x, y) => y === 0 ? x : gcd(y, x % y);
-    let lcm = (a * b) / gcd(a, b);
-    printOutput(`LCM: ${lcm}`);
-}
-findLCM();
-</script>
+        function findLCM(a, b) {
+            return Math.abs(a * b) / findGCD(a, b);
+        }
 
+        var a = parseInt(prompt("Enter the first number:"));
+        var b = parseInt(prompt("Enter the second number:"));
+
+        var lcm = findLCM(a, b);
+        document.write("The LCM of " + a + " and " + b + " is " + lcm);
+    </script>
 </body>
 </html>
-

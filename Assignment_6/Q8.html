@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Find the GCD (Greatest Common Divisor)</title>
+</head>
 <body>
+    <h1>Find the GCD (Greatest Common Divisor)</h1>
+    
+    <script>
+        function findGCD(a, b) {
+            if (b === 0) {
+                return a;
+            } else {
+                return findGCD(b, a % b);
+            }
+        }
 
-<script>
-    function printOutput(message) {
-    document.write("<strong>Result:</strong> " + message + "<br><br>");
-}
-    function findGCD() {
-    let a = parseInt(prompt("Enter first number:"));
-    let b = parseInt(prompt("Enter second number:"));
-    while (b !== 0) {
-        [a, b] = [b, a % b];
-    }
-    printOutput(`GCD: ${a}`);
-}
-findGCD();
-</script>
+        let a = parseInt(prompt("Enter the first number:"));
+        let b = parseInt(prompt("Enter the second number:"));
 
+        let gcd = findGCD(a, b);
+        document.write("The GCD of " + a + " and " + b + " is " + gcd);
+    </script>
 </body>
 </html>

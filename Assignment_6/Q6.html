@@ -1,37 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temperature Converter</title>
+    <title>Temperature Conversion</title>
+</head>
+<body>
+    <h1>Temperature Conversion</h1>
+    
     <script>
         function celsiusToFahrenheit(celsius) {
-            return (celsius * 9/5) + 32;
+            return (celsius * 9 / 5) + 32;
         }
 
         function fahrenheitToCelsius(fahrenheit) {
-            return (fahrenheit - 32) * 5/9;
+            return (fahrenheit - 32) * 5 / 9;
         }
 
-        function convertTemperature() {
-            const temp = prompt("Enter Temperature:");
-            const conversionType = prompt("Type 'CtoF' to convert Celsius to Fahrenheit or 'FtoC' to convert Fahrenheit to Celsius:");
-            let result;
+        var choice = prompt("Type 'C' to convert Celsius to Fahrenheit or 'F' to convert Fahrenheit to Celsius:");
 
-            if (conversionType === "CtoF") {
-                result = celsiusToFahrenheit(temp);
-                alert(`${temp}°C is equal to ${result.toFixed(2)}°F`);
-            } else if (conversionType === "FtoC") {
-                result = fahrenheitToCelsius(temp);
-                alert(`${temp}°F is equal to ${result.toFixed(2)}°C`);
-            } else {
-                alert("Invalid conversion type. Please try again.");
-            }
+        if (choice.toUpperCase() === 'C') {
+            var celsius = parseFloat(prompt("Enter temperature in Celsius:"));
+            var fahrenheit = celsiusToFahrenheit(celsius);
+            document.write("Temperature in Celsius: " + celsius + "<br>");
+            document.write("Temperature in Fahrenheit: " + fahrenheit);
+        } else if (choice.toUpperCase() === 'F') {
+            var fahrenheit = parseFloat(prompt("Enter temperature in Fahrenheit:"));
+            var celsius = fahrenheitToCelsius(fahrenheit);
+            document.write("Temperature in Fahrenheit: " + fahrenheit + "<br>");
+            document.write("Temperature in Celsius: " + celsius);
+        } else {
+            document.write("Invalid choice. Please refresh the page and try again.");
         }
     </script>
-</head>
-<body>
-    <h1>Temperature Converter</h1>
-    <button onclick="convertTemperature()">Convert Temperature</button>
 </body>
 </html>

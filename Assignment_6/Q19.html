@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find the Longest Word in a Sentence</title>
+</head>
+<body>
+    <h1>Find the Longest Word in a Sentence</h1>
+    
+    <script>
+        function findLongestWord(sentence) {
+            var words = sentence.split(' ');
+            var longestWord = '';
+
+            for (var i = 0; i < words.length; i++) {
+                if (words[i].length > longestWord.length) {
+                    longestWord = words[i];
+                }
+            }
+
+            return longestWord;
+        }
+
+        var inputSentence = prompt("Enter a sentence:");
+        var longestWord = findLongestWord(inputSentence);
+
+        document.write("Input: " + inputSentence + "<br>");
+        document.write("The longest word is: " + longestWord);
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Convert a Number to Binary and Binary to Decimal</title>
+</head>
+<body>
+    <h1>Convert a Number to Binary and Binary to Decimal</h1>
+    
+    <script>
+        function decimalToBinary(decimal) {
+            return decimal.toString(2);
+        }
+
+        function binaryToDecimal(binary) {
+            return parseInt(binary, 2);
+        }
+
+        let choice = prompt("Type 'D' to convert decimal to binary or 'B' to convert binary to decimal:");
+
+        if (choice.toUpperCase() === 'D') {
+            let decimal = parseInt(prompt("Enter a decimal number:"));
+            let binary = decimalToBinary(decimal);
+            document.write("Decimal: " + decimal + "<br>");
+            document.write("Binary: " + binary + "<br>");
+        } else if (choice.toUpperCase() === 'B') {
+            let binary = prompt("Enter a binary number:");
+            let decimal = binaryToDecimal(binary);
+            document.write("Binary: " + binary + "<br>");
+            document.write("Decimal: " + decimal + "<br>");
+        } else {
+            document.write("Invalid choice. Please refresh the page and try again.");
+        }
+    </script>
+</body>
+</html>

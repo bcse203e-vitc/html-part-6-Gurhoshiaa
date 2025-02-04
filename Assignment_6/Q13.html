@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Second Smallest and Second Largest Numbers</title>
+</head>
+<body>
+    <h1>Find Second Smallest and Second Largest Numbers in an Array</h1>
+    
+    <script>
+        function findSecondSmallestAndLargest(arr) {
+            if (arr.length < 2) {
+                return {
+                    secondSmallest: null,
+                    secondLargest: null
+                };
+            }
+
+            arr.sort(function(a, b) {
+                return a - b;
+            });
+
+            var secondSmallest = arr[1];
+            var secondLargest = arr[arr.length - 2];
+
+            return {
+                secondSmallest: secondSmallest,
+                secondLargest: secondLargest
+            };
+        }
+
+        var input = prompt("Enter numbers separated by commas (e.g. 4, 2, 9, 1, 5, 6):");
+        var inputArray = input.split(',').map(Number);
+        var result = findSecondSmallestAndLargest(inputArray);
+        
+        document.write("Input Array: " + inputArray.join(", ") + "<br>");
+        document.write("Second Smallest: " + result.secondSmallest + "<br>");
+        document.write("Second Largest: " + result.secondLargest);
+    </script>
+</body>
+</html>

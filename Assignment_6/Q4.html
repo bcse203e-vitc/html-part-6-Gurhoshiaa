@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Reverse a Number</title>
+</head>
 <body>
+    <h1>Reverse a Number</h1>
+    
+    <script>
+        function reverseNumber(number) {
+            return parseInt(number.toString().split('').reverse().join(''), 10);
+        }
 
-<script>
-    function reverseNumber() {
-    let num = parseInt(prompt("Enter a number:"));
-    let reversed = parseInt(num.toString().split('').reverse().join(''));
-    document.write("<p>Reversed Number: "+reversed+"</p>");
-    if(num==reversed){
-        document.write("<p>Palindrome</p")
-    }
-    else{
-        document.write("<p>Not a Palindrome</p")
-    }
-}
-reverseNumber();
-</script>
+        function isPalindrome(number) {
+            return number === reverseNumber(number);
+        }
 
+        var number = parseInt(prompt("Enter a number:"));
+        var reversedNumber = reverseNumber(number);
+        var palindromeCheck = isPalindrome(number);
+
+        document.write("Original number: " + number + "<br>");
+        document.write("Reversed number: " + reversedNumber + "<br>");
+        document.write("Is the number palindromic? " + (palindromeCheck ? "Yes" : "No"));
+    </script>
 </body>
 </html>

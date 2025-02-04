@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fibonacci Sequence Generator</title>
-    <script>
-        function printOutput(message) {
-    document.write("<strong>Result:</strong> " + message + "<br><br>");
-}
-        function generateFibonacci() {
-    let n = parseInt(prompt("Enter N:"));
-    let fib = [0, 1];
-    for (let i = 2; i < n; i++) {
-        fib[i] = fib[i - 1] + fib[i - 2];
-    }
-    printOutput(`Fibonacci Series: ${fib.slice(0, n).join(", ")}`);
-}
-    </script>
+    <title>Generate Fibonacci Series</title>
 </head>
 <body>
-    <h1>Fibonacci Sequence Generator</h1>
-    <button onclick="generateFibonacci()">Generate Fibonacci Sequence</button>
+    <h1>Generate Fibonacci Series</h1>
+    
+    <script>
+        function generateFibonacciSeries(n) {
+            var fibSeries = [0, 1];
+            for (var i = 2; i < n; i++) {
+                fibSeries.push(fibSeries[i - 1] + fibSeries[i - 2]);
+            }
+            return fibSeries.slice(0, n);
+        }
+
+        var n = parseInt(prompt("Enter the number of Fibonacci terms to generate:"));
+        var fibSeries = generateFibonacciSeries(n);
+        
+        document.write("First " + n + " numbers in the Fibonacci series: " + fibSeries.join(", "));
+    </script>
 </body>
 </html>

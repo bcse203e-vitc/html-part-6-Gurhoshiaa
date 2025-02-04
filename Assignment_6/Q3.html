@@ -1,14 +1,53 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Check Even or Odd</title>
+</head>
 <body>
+    <h1>Check If a Number is Even or Odd</h1>
+    
+    <script>
+        function isEvenOrOdd(number) {
+            if (number % 2 === 0) {
+                return "Even";
+            } else {
+                return "Odd";
+            }
+        }
 
-<script>
-    function checkEvenOdd() {
-    let num = parseInt(prompt("Enter a number:"));
-    document.write(num % 2 === 0 ? "Even" : "Odd");
-}
-checkEvenOdd();
-</script>
+        var number = parseInt(prompt("Enter a number:"));
+        document.write("The number " + number + " is " + isEvenOrOdd(number) + "<br><br>");
+    </script>
 
+    <h1>Separate Even and Odd Numbers</h1>
+    
+    <script>
+        function separateEvenAndOdd(numbers) {
+            var evenNumbers = [];
+            var oddNumbers = [];
+
+            for (var i = 0; i < numbers.length; i++) {
+                if (numbers[i] % 2 === 0) {
+                    evenNumbers.push(numbers[i]);
+                } else {
+                    oddNumbers.push(numbers[i]);
+                }
+            }
+
+            return { evenNumbers: evenNumbers, oddNumbers: oddNumbers };
+        }
+
+        var n = parseInt(prompt("How many numbers do you want to enter?"));
+        var numbers = [];
+
+        for (var i = 0; i < n; i++) {
+            var number = parseInt(prompt("Enter number " + (i + 1) + ":"));
+            numbers.push(number);
+        }
+
+        var separatedNumbers = separateEvenAndOdd(numbers);
+        document.write("Even numbers: " + separatedNumbers.evenNumbers.join(", ") + "<br>");
+        document.write("Odd numbers: " + separatedNumbers.oddNumbers.join(", "));
+    </script>
 </body>
 </html>

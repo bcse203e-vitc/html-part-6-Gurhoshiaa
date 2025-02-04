@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Count the Occurrences of Each Character in a String</title>
+</head>
+<body>
+    <h1>Count the Occurrences of Each Character in a String</h1>
+    
+    <script>
+        function countCharacterOccurrences(str) {
+            var charCount = {};
+            for (var i = 0; i < str.length; i++) {
+                var char = str[i];
+                if (charCount[char]) {
+                    charCount[char]++;
+                } else {
+                    charCount[char] = 1;
+                }
+            }
+            return charCount;
+        }
+
+        var inputString = prompt("Enter a string:");
+        var result = countCharacterOccurrences(inputString);
+
+        document.write("Input: " + inputString + "<br>");
+        document.write("Character occurrences: " + JSON.stringify(result));
+    </script>
+</body>
+</html>
