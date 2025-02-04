@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+    function printOutput(message) {
+    document.write("<strong>Result:</strong> " + message + "<br><br>");
+}
+function checkArmstrong() {
+    let num = parseInt(prompt("Enter a number:"));
+    let digits = num.toString().split('');
+    let sum = digits.reduce((acc, d) => acc + Math.pow(parseInt(d), digits.length), 0);
+    printOutput(sum === num ? "Armstrong Number" : "Not an Armstrong Number");
+}
+checkArmstrong();
+</script>
+
+</body>
+</html>
+
